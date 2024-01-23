@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import SocialMedia from './SocialMedia'
 const Header = () => {
   return (
     <div>
@@ -17,7 +18,6 @@ const Header = () => {
     alt="Testimonial Image"
   />
 </a>
-
       </div>
       <div className="col-lg-9">
         <div className="row gx-0 bg-white d-none d-lg-flex">
@@ -33,21 +33,7 @@ const Header = () => {
           </div>
           <div className="col-lg-5 px-5 text-end">
             <div className="d-inline-flex align-items-center py-2">
-              <a className="me-3" href="">
-                <i className="fab fa-facebook-f" />
-              </a>
-              <a className="me-3" href="">
-                <i className="fab fa-twitter" />
-              </a>
-              <a className="me-3" href="">
-                <i className="fab fa-linkedin-in" />
-              </a>
-              <a className="me-3" href="">
-                <i className="fab fa-instagram" />
-              </a>
-              <a className="" href="">
-                <i className="fab fa-youtube" />
-              </a>
+            <SocialMedia />
             </div>
           </div>
         </div>
