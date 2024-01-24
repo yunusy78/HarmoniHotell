@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import Head from 'next/head';
+import Swal from 'sweetalert2';
+
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 export default function Newsletter() {
@@ -32,26 +33,53 @@ export default function Newsletter() {
         const data = await response.json();
   
         if (response.ok) {
-          // Successful subscription
-          setSubscriptionResult('Subscription successful!');
+          // Başarılı abonelik
+          Swal.fire({
+            icon: 'success',
+            title: 'Abonnement vellykket!',
+            showConfirmButton: false,
+            timer: 3000,
+          });
+          setSubscriptionResult('Abonnement vellykket!');
         } else {
-          // Failed subscription with JSON response
-          setSubscriptionResult(`Subscription failed: ${data.message}`);
+          // JSON yanıtlı başarısız abonelik
+          Swal.fire({
+            icon: 'error',
+            title: 'Abonnement mislyktes',
+            text: `Abonnement mislyktes: ${data.message}`,
+          });
+          setSubscriptionResult(`Abonnement mislyktes: ${data.message}`);
         }
       } else {
-        // Handle non-JSON response
+        // JSON olmayan yanıt
         if (response.ok) {
-          // Successful subscription with non-JSON response
-          setSubscriptionResult('Subscription successful!');
+          // JSON olmayan yanıtlı başarılı abonelik
+          Swal.fire({
+            icon: 'success',
+            title: 'Abonnement vellykket!',
+            showConfirmButton: false,
+            timer: 3000,
+          });
+          setSubscriptionResult('Abonnement vellykket!');
         } else {
-          // Failed subscription with non-JSON response
-          setSubscriptionResult(`Subscription failed: ${await response.text()}`);
+          // JSON olmayan yanıtlı başarısız abonelik
+          const text = await response.text();
+          Swal.fire({
+            icon: 'error',
+            title: 'Abonnement mislyktes',
+            text: `Abonnement mislyktes: ${text}`,
+          });
+          setSubscriptionResult(`Abonnement mislyktes: ${text}`);
         }
       }
-  
     } catch (error) {
-      console.error("Error subscribing to newsletter:", error);
-      setSubscriptionResult('Internal Server Error');
+      console.error('Feil ved påmelding til nyhetsbrev:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Feil ved påmelding',
+        text: 'Intern serverfeil',
+      });
+      setSubscriptionResult('Intern serverfeil');
     }
   };
   

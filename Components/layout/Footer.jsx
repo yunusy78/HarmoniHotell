@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getFooters } from '../../pages/api/footer';
 import SocialMedia from './SocialMedia';
+import Link from 'next/link';
 
 
 function Footer() {
@@ -64,12 +65,12 @@ function Footer() {
             <h6 className="section-title text-start text-primary text-uppercase mb-4">
               Selskap
             </h6>
-            <a className="btn btn-link" href="">
+            <Link className="btn btn-link" href="/About">
               Om Oss
-            </a>
-            <a className="btn btn-link" href="">
+            </Link>
+            <Link className="btn btn-link" href="/Contact">
               Kontakt Oss
-            </a>
+            </Link>
             <a className="btn btn-link" href="">
               Personvernspolicy
             </a>

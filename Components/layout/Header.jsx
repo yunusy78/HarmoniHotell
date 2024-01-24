@@ -72,13 +72,13 @@ const Header = () => {
     Kontakt
 </Link>
 
-            <a
-              href="https://htmlcodex.com/hotel-html-template-pro"
+            <Link
+              href="/Booking"
               className="btn btn-primary rounded-0 py-4 px-md-5 d-none d-lg-block"
             >
               Reservasjon
               <i className="fa fa-arrow-right ms-3" />
-            </a>
+            </Link>
           </div>
         </nav>
       </div>

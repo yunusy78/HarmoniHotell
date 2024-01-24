@@ -23,6 +23,7 @@
     "sa": "^0.2.50",
     "sass": "^1.70.0",
     "ss": "^0.0.1",
+    "sweetalert2": "^11.10.4",
     "tempusdominus-bootstrap-4": "^5.39.2"
   },
   "devDependencies": {

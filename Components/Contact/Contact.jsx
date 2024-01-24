@@ -1,9 +1,10 @@
 import React from 'react'
+import ContactForm from './ContactForm'
 
 const Contact = () => {
   return (
     <>
-      <div className="container-xxl py-5">
+  <div className="container-xxl py-5">
   <div className="container">
     <div className="text-center wow fadeInUp" data-wow-delay="0.1s">
       <h6 className="section-title text-center text-primary text-uppercase">
@@ -57,64 +58,7 @@ const Contact = () => {
           tabIndex={0}
         />
       </div>
-      <div className="col-md-6">
-        <div className="wow fadeInUp" data-wow-delay="0.2s">
-          <form>
-            <div className="row g-3">
-              <div className="col-md-6">
-                <div className="form-floating">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="name"
-                    placeholder="Ditt Navn"
-                  />
-                  <label htmlFor="name">Ditt Navn</label>
-                </div>
-              </div>
-              <div className="col-md-6">
-                <div className="form-floating">
-                  <input
-                    type="email"
-                    className="form-control"
-                    id="email"
-                    placeholder="Din E-post"
-                  />
-                  <label htmlFor="email">Din E-post</label>
-                </div>
-              </div>
-              <div className="col-12">
-                <div className="form-floating">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="subject"
-                    placeholder="Emne"
-                  />
-                  <label htmlFor="subject">Emne</label>
-                </div>
-              </div>
-              <div className="col-12">
-                <div className="form-floating">
-                  <textarea
-                    className="form-control"
-                    placeholder="Skriv en melding her"
-                    id="message"
-                    style={{ height: 150 }}
-                    defaultValue={""}
-                  />
-                  <label htmlFor="message">Melding</label>
-                </div>
-              </div>
-              <div className="col-12">
-                <button className="btn btn-primary w-100 py-3" type="submit">
-                  Send Melding
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
+      <ContactForm />
     </div>
   </div>
 </div>

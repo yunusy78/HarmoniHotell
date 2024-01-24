@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getBanners } from '../../pages/api/banner';
+import Link from 'next/link';
 
 function Carausel() {
   const [banners, setBanner] = useState([]);
@@ -39,18 +40,18 @@ function Carausel() {
                   <h1 className="display-3 text-white mb-4 animated slideInDown">
                     {item.description}
                   </h1>
-                  <a
-                    href=""
+                  <Link
+                    href="/Room"
                     className="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft"
                   >
                     Våre Rom
-                  </a>
-                  <a
-                    href=""
+                  </Link>
+                  <Link
+                    href="/Booking"
                     className="btn btn-light py-md-3 px-md-5 animated slideInRight"
                   >
                     Bestill Et Rom
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
